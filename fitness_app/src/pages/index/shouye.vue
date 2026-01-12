@@ -43,8 +43,10 @@
         </view>
       </view>
     </view>
+    
+    <!-- 底部导航栏 -->
+    <tab-bar />
   </view>
-  <tab-bar />
 </template>
 
 <script>

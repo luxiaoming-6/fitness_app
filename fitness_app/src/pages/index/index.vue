@@ -9,7 +9,7 @@
         <text class="banner-subtitle">Makes exercise more fun.</text>
         <view class="banner-logo">
           <image class="logo-image" src="/static/355.png" mode="aspectFit"></image>
-          <text class="logo-text">BOOMTANG</text>
+          <!-- <text class="logo-text">BOOMTANG</text> -->
         </view>
       </view>
     </view>
@@ -19,19 +19,19 @@
       <view class="tab-item" @click="navigateToChallenge">
         <image class="tab-image" src="/static/29-80.jpg" mode="aspectCover"></image>
         <view class="tab-content">
-          <text class="tab-text">Online<br/>Course</text>
+          <text class="tab-text">Online\nCourse</text>
         </view>
       </view>
       <view class="tab-item" @click="navigateToChallenge">
         <image class="tab-image" src="/static/35-80.jpg" mode="aspectCover"></image>
         <view class="tab-content">
-          <text class="tab-text">Offline<br/>School</text>
+          <text class="tab-text">Offline\nSchool</text>
         </view>
       </view>
       <view class="tab-item" @click="navigateToChallenge">
         <image class="tab-image" src="/static/37-80.jpg" mode="aspectCover"></image>
         <view class="tab-content">
-          <text class="tab-text">About<br/>Boomtang</text>
+          <text class="tab-text">About\nBoomtang</text>
         </view>
       </view>
     </view>
@@ -70,12 +70,12 @@
       <image class="challenge-image" src="/static/35-80.jpg" mode="aspectCover"></image>
       <view class="challenge-content">
         <view class="challenge-logo">
-          <image class="logo-image" src="/static/logo.png" mode="aspectFit"></image>
-          <view class="logo-text-container">
+          <image class="logo-image" src="/static/99b7.png" mode="aspectFit"></image>
+          <!-- <view class="logo-text-container">
             <text class="logo-text">BOOMTANG</text>
             <text class="logo-subtext">Race to the challenge</text>
             <text class="logo-subtext-2">Join the fun! Share the joy.</text>
-          </view>
+          </view> -->
         </view>
         <text class="challenge-title">春季挑战赛</text>
         <text class="challenge-subtitle">Competition of the season!</text>
@@ -90,19 +90,19 @@
     <!-- 6. 课程分类部分 -->
     <view class="courses">
       <text class="section-title">特色课程</text>
-      <scroll-view class="course-scroll" scroll-x="true">
+      <scroll-view class="course-scroll" scroll-x="false">
         <view class="course-list">
-          <view class="course-card">
-            <image class="course-image" src="/static/37-80.jpg" mode="aspectCover"></image>
-            <view class="course-content">
-              <text class="course-name" style="font-size: 32rpx;">Monkey Bar</text>
-              <text class="course-period">Jan.01-Apr.31</text>
-            </view>
-          </view>
           <view class="course-card">
             <image class="course-image" src="/static/38-80.jpg" mode="aspectCover"></image>
             <view class="course-content">
               <text class="course-name">Biking</text>
+              <text class="course-period">Jan.01-Apr.31</text>
+            </view>
+          </view>
+          <view class="course-card">
+            <image class="course-image" src="/static/37-80.jpg" mode="aspectCover"></image>
+            <view class="course-content">
+              <text class="course-name" style="font-size: 32rpx;">Monkey Bar</text>
               <text class="course-period">Jan.01-Apr.31</text>
             </view>
           </view>
@@ -149,35 +149,35 @@
         <!-- <image class="main-equipment" src="/static/logo.png" mode="aspectFit"></image> -->
         
         <!-- 特性点 -->
-        <!-- <view class="feature-item top-left">
-          <image class="feature-icon" src="/static/logo.png" mode="aspectFit"></image>
+        <view class="feature-item top-left">
+          <!-- <image class="feature-icon" src="/static/logo.png" mode="aspectFit"></image> -->
           <text class="feature-text">模块化结构</text>
-        </view> -->
+        </view>
         
-        <!-- <view class="feature-item top-right">
-          <image class="feature-icon" src="/static/logo.png" mode="aspectFit"></image>
+        <view class="feature-item top-right">
+          <!-- <image class="feature-icon" src="/static/logo.png" mode="aspectFit"></image> -->
           <text class="feature-text">进口泡沫缓冲平台</text>
-        </view> -->
+        </view>
         
-        <!-- <view class="feature-item middle-right">
-          <image class="feature-icon" src="/static/logo.png" mode="aspectFit"></image>
+        <view class="feature-item middle-right">
+          <!-- <image class="feature-icon" src="/static/logo.png" mode="aspectFit"></image> -->
           <text class="feature-text">原创悬挂障碍</text>
-        </view> -->
+        </view>
         
-        <!-- <view class="feature-item bottom-right">
-          <image class="feature-icon" src="/static/logo.png" mode="aspectFit"></image>
+        <view class="feature-item bottom-right">
+          <!-- <image class="feature-icon" src="/static/logo.png" mode="aspectFit"></image> -->
           <text class="feature-text">专业地面障碍</text>
-        </view> -->
+        </view>
         
-        <!-- <view class="feature-item bottom">
-          <image class="feature-icon" src="/static/logo.png" mode="aspectFit"></image>
+        <view class="feature-item bottom">
+          <!-- <image class="feature-icon" src="/static/logo.png" mode="aspectFit"></image> -->
           <text class="feature-text">可靠安全网</text>
-        </view> -->
+        </view>
         
-        <!-- <view class="feature-item bottom-left">
-          <image class="feature-icon" src="/static/logo.png" mode="aspectFit"></image>
+        <view class="feature-item bottom-left">
+          <!-- <image class="feature-icon" src="/static/logo.png" mode="aspectFit"></image> -->
           <text class="feature-text orange">地面材料可选</text>
-        </view> -->
+        </view>
       </view>
       
       <!-- <text class="store-description">
@@ -209,8 +209,10 @@
     <!-- <view class="footer">
       <text class="footer-text">© 2026 BOOMTANG Fitness. All rights reserved.</text>
     </view> -->
+    
+    <!-- 底部导航栏 -->
+    <tab-bar></tab-bar>
   </view>
-  <tab-bar />
 </template>
 
 <script>
@@ -670,7 +672,7 @@ export default {
 .challenge {
   position: relative;
   width: 100%;
-  height: 1200rpx;
+  height: 1050rpx;
   margin: 0;
   border-radius: 0;
   overflow: hidden;
@@ -705,8 +707,8 @@ export default {
 }
 
 .challenge-logo .logo-image {
-  width: 80rpx;
-  height: 80rpx;
+  width: 320rpx;
+  height: 180rpx;
 }
 
 .logo-text-container {
@@ -854,10 +856,10 @@ export default {
   display: flex;
   align-items: flex-start;
   gap: 30rpx;
-  padding: 30rpx;
+  /* padding: 30rpx; */
   background-color: #ffffff;
   border-radius: 20rpx;
-  box-shadow: 0 4rpx 15rpx rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 4rpx 15rpx rgba(0, 0, 0, 0.05); */
 }
 
 .feature-icon {
@@ -929,36 +931,36 @@ export default {
 }
 
 .feature-item.top-left {
-  top: 80rpx;
-  left: 0;
+  top: 20rpx;
+  left: 150rpx;
 }
 
 .feature-item.top-right {
-  top: 20rpx;
-  right: 0;
+  top: -5rpx;
+  right: -110rpx;
   flex-direction: row-reverse;
 }
 
 .feature-item.middle-right {
-  top: 180rpx;
-  right: 0;
+  top: 185rpx;
+  right: -50rpx;
   flex-direction: row-reverse;
 }
 
 .feature-item.bottom-right {
-  top: 300rpx;
-  right: 0;
+  top: 290rpx;
+  right: -50rpx;
   flex-direction: row-reverse;
 }
 
 .feature-item.bottom {
-  bottom: 120rpx;
-  right: 40%;
+  bottom: -130rpx;
+  right: -20rpx;
 }
 
 .feature-item.bottom-left {
-  bottom: 80rpx;
-  left: 0;
+  bottom: -350rpx;
+  left: -20rpx;
 }
 
 .feature-icon {

@@ -13,7 +13,7 @@ export default {
     // 跳转到首页
     const navigateToShouye = () => {
       uni.navigateTo({
-        url: '/pages/index/shouye'
+        url: '/pages/index/index'
       });
     };
 

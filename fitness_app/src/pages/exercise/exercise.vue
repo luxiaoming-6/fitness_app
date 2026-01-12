@@ -106,7 +106,7 @@
     </view>
     
     <!-- 自定义底部导航栏 -->
-    <tab-bar />
+    <tab-bar></tab-bar>
   </view>
 </template>
 

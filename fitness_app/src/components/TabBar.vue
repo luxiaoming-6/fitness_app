@@ -7,7 +7,7 @@
       
       @click="switchTab(index)"
     >
-    <!-- :class="{ 'floating-item': index === 2 }" -->
+
       <view class="tab-icon">
         <image 
           :src="activeIndex === index ? item.selectedIcon : item.icon" 
@@ -20,15 +20,11 @@
 </template>
 
 <script>
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted } from 'vue';
+import { onShow } from '@dcloudio/uni-app';
 
 export default {
   name: 'TabBar',
-  // 使用UniApp的生命周期钩子
-  onShow() {
-    // 页面显示时更新选中状态
-    this.updateActiveIndex();
-  },
   setup() {
     // 底部导航栏数据
     const tabList = ref([
@@ -48,7 +44,7 @@ export default {
         text: '线下课程',
         icon: '/static/tabbar/icons-04.png',
         selectedIcon: '/static/tabbar/icons-04.png',
-        path: '/pages/exercise/exercise'
+        path: '/pages/exercise/schedule'
       },
       {
         text: '电子商城',
@@ -67,9 +63,6 @@ export default {
     // 当前选中的索引
     const activeIndex = ref(0);
     
-    // 安全区域底部距离
-    const safeAreaBottom = ref(0);
-    
     // 根据当前路由获取选中索引
     const getActiveIndex = () => {
       // 使用uni的API获取当前页面路径
@@ -87,7 +80,7 @@ export default {
     const switchTab = (index) => {
       const item = tabList.value[index];
       if (item) {
-        // 使用uni的API进行页面跳转
+        // 对于自定义TabBar组件，使用uni.navigateTo进行页面跳转
         uni.navigateTo({
           url: item.path
         });
@@ -100,23 +93,13 @@ export default {
       activeIndex.value = getActiveIndex();
     };
     
-    // 获取设备安全区域
-    const getSafeArea = () => {
-      try {
-        const systemInfo = uni.getSystemInfoSync();
-        // 获取底部安全区域高度（px）
-        const bottomPx = systemInfo.safeAreaInsets?.bottom || 0;
-        // 将px转换为rpx（1px = 2rpx）
-        safeAreaBottom.value = bottomPx * 2;
-      } catch (error) {
-        console.error('获取安全区域失败:', error);
-        safeAreaBottom.value = 0;
-      }
-    };
+    // 监听页面显示，更新选中状态
+    onShow(() => {
+      updateActiveIndex();
+    });
     
-    // 初始化时获取选中索引和安全区域
+    // 初始化时获取选中索引
     onMounted(() => {
-      getSafeArea();
       updateActiveIndex();
     });
     
@@ -124,8 +107,7 @@ export default {
       tabList,
       activeIndex,
       switchTab,
-      updateActiveIndex,
-      safeAreaBottom
+      updateActiveIndex
     };
   }
 };
@@ -185,8 +167,8 @@ export default {
 
 .tab-icon {
   padding-top: 8rpx;
-  height: 48px;
-  width: 48px;
+  height: 96rpx;
+  width: 96rpx;
   margin-bottom: 8rpx;
   display: flex;
   align-items: center;

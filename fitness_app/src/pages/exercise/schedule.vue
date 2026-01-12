@@ -1,22 +1,7 @@
 <template>
   <view class="schedule-container">
     <!-- 顶部导航栏 -->
-    <view class="top-nav">
-      <!-- <view class="nav-left" @click="navigateBack">
-        <image class="back-icon" src="/static/back.png" mode="aspectFit"></image>
-      </view> -->
-      <view class="nav-center">
-        <image class="monkey-logo" src="/static/99b7.png" mode="aspectFit"></image>
-        <!-- <view class="brand-text">
-          <text class="brand-name">BOOMTANG</text>
-          <text class="slogan">Rise to the Challenge</text>
-        </view> -->
-      </view>
-      <!-- <view class="nav-right">
-        <image class="more-icon" src="/static/more.png" mode="aspectFit"></image>
-        <image class="settings-icon" src="/static/settings.png" mode="aspectFit"></image>
-      </view> -->
-    </view>
+    <TopNavbar></TopNavbar>
     
     <!-- 页面标题和日期 -->
     <view class="page-header">
@@ -98,14 +83,23 @@
         <text class="button-text">报名</text>
       </view>
     </view>
+    
+    <!-- 底部导航栏 -->
+    <tabBar></tabBar>
   </view>
 </template>
 
 <script>
 import { ref } from 'vue';
+import tabBar from '../../components/TabBar.vue'
+import TopNavbar from '../../components/TopNavbar.vue';
 
 export default {
   name: 'SchedulePage',
+  components: {
+    tabBar,
+    TopNavbar
+  },
   setup() {
     // 当前日期
     const currentYear = ref('2026');
@@ -195,6 +189,7 @@ export default {
   flex-direction: column;
   min-height: 100vh;
   background-color: #fff;
+  padding-bottom: 120rpx;
 }
 
 /* 顶部导航栏 */
