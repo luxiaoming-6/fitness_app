@@ -1,0 +1,54 @@
+{
+  // 访问 https://aka.ms/tsconfig 了解更多关于此文件的信息
+  "compilerOptions": {
+    // 文件布局配置
+    "rootDir": "./src",  // 源代码目录
+    "outDir": "./dist",  // 编译输出目录
+
+    // 环境设置
+    // 参考: https://aka.ms/tsconfig/module
+    "module": "commonjs",  // nodenext模块系统，使用Node.js的ESM模块系统
+    "target": "ES6",  // esnext编译目标JavaScript版本，使用最新ES标准
+    "types": [],  // 要包含的类型声明文件
+    // Node.js环境推荐配置:
+    // "lib": ["esnext"],  // 包含的标准库
+    // "types": ["node"],  // 包含Node.js类型声明
+    // 需要安装: npm install -D @types/node
+
+    // 其他输出选项
+    "sourceMap": true,  // 生成Source Map文件，便于调试
+    "declaration": true,  // 生成类型声明文件(.d.ts)
+    "declarationMap": true,  // 为类型声明文件生成Source Map
+
+    // 更严格的类型检查选项
+    "noUncheckedIndexedAccess": true,  // 启用更严格的索引访问检查
+    "exactOptionalPropertyTypes": true,  // 精确的可选属性类型检查
+    "strictPropertyInitialization": false,  // 禁用严格属性初始化检查（TypeORM实体不需要在构造函数中初始化）
+
+    // 代码风格选项
+    // "noImplicitReturns": true,  // 禁止隐式返回
+    // "noImplicitOverride": true,  // 禁止隐式覆盖
+    // "noUnusedLocals": true,  // 禁止未使用的局部变量
+    // "noUnusedParameters": true,  // 禁止未使用的参数
+    // "noFallthroughCasesInSwitch": true,  // 禁止switch语句中的穿透
+    // "noPropertyAccessFromIndexSignature": true,  // 禁止从索引签名访问属性
+
+    // 推荐选项
+    "strict": true,  // 启用所有严格类型检查选项
+    "esModuleInterop": true,  // 允许使用CommonJS和ES模块之间的互操作
+    "experimentalDecorators": true,  // 启用装饰器支持
+    "emitDecoratorMetadata": true,  // 启用装饰器元数据
+    // "jsx": "react-jsx",  // JSX语法转换选项
+    "verbatimModuleSyntax": false,  // 严格的模块语法检查
+    "isolatedModules": true,  // 启用隔离模块编译
+    "noUncheckedSideEffectImports": true,  // 检查导入的副作用
+    "moduleDetection": "force",  // 强制模块检测
+    "skipLibCheck": true,  // 跳过库文件的类型检查
+  },
+  "include": [
+    "src/**/*"  // 包含的文件模式
+  ],
+  "exclude": [
+    "node_modules"  // 排除的目录
+  ]
+}
